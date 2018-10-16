@@ -10,7 +10,7 @@ public class World {
 
     public Player player = new Player();
 
-    public BlackHole blackHole = new BlackHole(700,100,300,300);
+    public Maelstrom maelstrom = new Maelstrom(700,100,300,300);
 
     public Enemy enemy1 = new Enemy(100,-500,500,150);
     public Enemy enemy2 = new Enemy(300,1500,1000,100);
@@ -32,15 +32,15 @@ public class World {
         counter += deltaMillis;
         int newSpeed = 3 +(counter/20000);
         enemy1.setSpeed(newSpeed);
-        blackHole.setSpeed(newSpeed);
+        maelstrom.setSpeed(newSpeed);
         for(Enemy enemy : enemies){
             enemy.move();
             if(player.findBoundsPlayer().intersects(enemy.findBoundsEnemy())){
                 status = false;
             }
         }
-        blackHole.move();
-        if(blackHole.findBoundsBlackHole().intersects(player.findBoundsPlayer())){
+        maelstrom.move();
+        if(maelstrom.findBoundsMaelstrom().intersects(player.findBoundsPlayer())){
             status = false;
         }
 

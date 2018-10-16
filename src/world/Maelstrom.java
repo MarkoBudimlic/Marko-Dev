@@ -3,16 +3,16 @@ package world;
 
 import java.awt.geom.Ellipse2D;
 
-public class BlackHole implements Object {
+public class Maelstrom implements Object {
 
     public static int speed = 100;
     int positionX;
     int positionY;
     int width;
     int height;
-    Ellipse2D.Double boundsBlackHole;
+    Ellipse2D.Double boundsMaelstrom;
 
-    public BlackHole(int positionX, int positionY, int width, int height) {
+    public Maelstrom(int positionX, int positionY, int width, int height) {
         this.positionX = positionX;
         this.positionY = positionY;
         this.width = width;
@@ -20,9 +20,9 @@ public class BlackHole implements Object {
     }
 
     /**FINDS THE BOUNDS FOR COLLISION DETECTION*/
-    public Ellipse2D.Double findBoundsBlackHole() {
-        this.boundsBlackHole = new Ellipse2D.Double(positionX,positionY,width,height);
-        return boundsBlackHole;
+    public Ellipse2D.Double findBoundsMaelstrom() {
+        this.boundsMaelstrom = new Ellipse2D.Double(positionX,positionY,width,height);
+        return boundsMaelstrom;
     }
 
     public void setSpeed(int speed) {
