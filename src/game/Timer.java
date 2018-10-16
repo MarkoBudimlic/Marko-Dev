@@ -9,7 +9,7 @@ public class Timer extends AnimationTimer {
     private World world;
     private Graphics graphics;
 
-    long lastMillis = -1;
+    public long lastMillis = -1;
 
     public Timer(World world, Graphics graphics) {
         this.world = world;

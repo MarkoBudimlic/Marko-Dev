@@ -26,8 +26,9 @@ public class Graphics {
         gc.fillRect(world.player.getPositionX(),world.player.getPositionY(),world.player.getWidth(),world.player.getHeight());
 
         gc.setFill(Color.BLACK);
-        int i = (int)(Math.random()*(5+1)+1);
-        gc.fillRect(world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
+        for(int i = 0; i < 5; i++) {
+            gc.fillRect(world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
+        }
 
 
     }

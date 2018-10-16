@@ -7,8 +7,9 @@ public class Enemy implements Object {
     int width;
     int height;
 
-    public Enemy(int positionX, int width, int height) {
+    public Enemy(int positionX, int positionY, int width, int height) {
         this.positionX = positionX;
+        this.positionY = positionY;
         this.width = width;
         this.height = height;
     }
@@ -23,8 +24,8 @@ public class Enemy implements Object {
     /**MOVES THE ENEMY OBJECTS*/
     public void move(){
         changeY(4);
-        if(positionY > 900){
-            this.positionY = 0;
+        if(positionY > 2000){
+            this.positionY = -2000;
         }
     }
 
