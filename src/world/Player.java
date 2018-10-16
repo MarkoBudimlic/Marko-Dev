@@ -4,6 +4,8 @@ public class Player implements Object {
 
     int positionX = 710;
     int positionY = 780;
+    int width = 50;
+    int height = 50;
 
 
     public int getPositionX() {
@@ -14,6 +16,13 @@ public class Player implements Object {
         return positionY;
     }
 
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 
     @Override
     public int changeX(int change) {
