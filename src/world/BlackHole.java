@@ -5,7 +5,7 @@ import java.awt.geom.Ellipse2D;
 
 public class BlackHole implements Object {
 
-    public static int speed = 10;
+    public static int speed = 1;
     int positionX;
     int positionY;
     int width;

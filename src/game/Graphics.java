@@ -1,8 +1,12 @@
 package game;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.RadialGradient;
+import javafx.scene.paint.Stop;
 import world.World;
 
 public class Graphics {
@@ -40,8 +44,12 @@ public class Graphics {
             for (int i = 0; i < 5; i++) {
                 gc.fillRect(world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
             }
-            gc.setFill(Color.BLACK);
+            gc.setFill(new RadialGradient(0, 0.3, 0.47, 0.7, 0.06, true,
+                    CycleMethod.REFLECT,
+                    new Stop(0.8, Color.BLACK),
+                    new Stop(1, Color.LIGHTYELLOW)));
             gc.fillOval(world.blackHole.getPositionX(),world.blackHole.getPositionY(),world.blackHole.getWidth(),world.blackHole.getHeight());
+
         }
 
 
