@@ -23,28 +23,26 @@ public class Graphics {
 
     public void draw(){
         /**DRAWS THE MODEL ON THE SCENE*/
-        gc.setFill(Color.MEDIUMAQUAMARINE);
+        gc.setFill(Color.DARKSLATEBLUE);
         gc.fillRect(0,0,Main.screenX,Main.screenY);
 
+
+
         /**draws player object*/
-
-
-
-
         if(world.isStatus() == false){
             /**YAO MING*/
-            gc.setFill(Color.BLACK);
+            gc.setFill(Color.DARKBLUE);
             gc.drawImage(new Image("yao.jpg"),0, 0);
         }
         else if(world.isStatus() == true) {
             gc.setFill(Color.SANDYBROWN);
             gc.fillRect(world.player.getPositionX(), world.player.getPositionY(), world.player.getWidth(), world.player.getHeight());
 
-            gc.setFill(Color.BLACK);
+            gc.setFill(Color.MEDIUMVIOLETRED);
             for (int i = 0; i < 5; i++) {
                 gc.fillRect(world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
             }
-            gc.setFill(new RadialGradient(0, 0.3, 0.47, 0.7, 0.06, true,
+            gc.setFill(new RadialGradient(100, 10, world.blackHole.getPositionY(), world.blackHole.getPositionX(), 1, true,
                     CycleMethod.REFLECT,
                     new Stop(0.8, Color.BLACK),
                     new Stop(1, Color.LIGHTYELLOW)));

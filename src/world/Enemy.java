@@ -6,7 +6,7 @@ import java.awt.*;
 public class Enemy implements Object {
 
 
-    public static int speed = 10;
+    public static int speed = 100;
     int positionX;
     int positionY;
     int width;

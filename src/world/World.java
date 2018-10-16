@@ -30,7 +30,7 @@ public class World {
     /**TIME UPDATE*/
     public void update(long deltaMillis){
         counter += deltaMillis;
-        int newSpeed = (counter/20000)+3;
+        int newSpeed = 3 +(counter/20000);
         enemy1.setSpeed(newSpeed);
         blackHole.setSpeed(newSpeed);
         for(Enemy enemy : enemies){
@@ -39,7 +39,7 @@ public class World {
                 status = false;
             }
         }
-//        blackHole.move();
+        blackHole.move();
         if(blackHole.findBoundsBlackHole().intersects(player.findBoundsPlayer())){
             status = false;
         }
