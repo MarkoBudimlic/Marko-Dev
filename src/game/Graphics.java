@@ -23,7 +23,14 @@ public class Graphics {
         gc.fillRect(0,0,Main.screenX,Main.screenY);
 
         /**draws player object*/
-        if(world.isStatus() == true) {
+
+
+        if(world.isStatus() == false){
+            /**YAO MING*/
+            gc.setFill(Color.BLACK);
+            gc.drawImage(new Image("yao.jpg"),0, 0);
+        }
+        else if(world.isStatus() == true) {
             gc.setFill(Color.SANDYBROWN);
             gc.fillRect(world.player.getPositionX(), world.player.getPositionY(), world.player.getWidth(), world.player.getHeight());
 
@@ -32,10 +39,7 @@ public class Graphics {
                 gc.fillRect(world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
             }
         }
-        else{
-            /**YAO MING*/
-            gc.drawImage(new Image("yao.jpg"),200, 0);
-        }
+
 
 
     }
