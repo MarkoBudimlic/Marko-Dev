@@ -26,6 +26,8 @@ public class World {
     /**TIME UPDATE*/
     public void update(long deltaMillis){
         counter += deltaMillis;
+        int newSpeed = (int)(counter/10000)+1;
+        enemy1.setSpeed(newSpeed);
         for(Enemy enemy : enemies){
             enemy.move();
         }

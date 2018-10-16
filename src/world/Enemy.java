@@ -1,9 +1,13 @@
 package world;
 
+
+
 public class Enemy implements Object {
 
+
+    public static int speed = 10;
     int positionX;
-    int positionY = 0;
+    int positionY;
     int width;
     int height;
 
@@ -12,6 +16,10 @@ public class Enemy implements Object {
         this.positionY = positionY;
         this.width = width;
         this.height = height;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
     public int getWidth() {
@@ -23,7 +31,7 @@ public class Enemy implements Object {
     }
     /**MOVES THE ENEMY OBJECTS*/
     public void move(){
-        changeY(4);
+        changeY(speed);
         if(positionY > 2000){
             this.positionY = -2000;
         }

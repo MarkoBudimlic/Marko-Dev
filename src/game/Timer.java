@@ -11,9 +11,14 @@ public class Timer extends AnimationTimer {
 
     public long lastMillis = -1;
 
+
     public Timer(World world, Graphics graphics) {
         this.world = world;
         this.graphics = graphics;
+    }
+
+    public long getLastMillis() {
+        return lastMillis;
     }
 
     @Override
