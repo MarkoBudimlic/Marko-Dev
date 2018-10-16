@@ -25,6 +25,8 @@ public class Graphics {
         /**draws player object*/
 
 
+
+
         if(world.isStatus() == false){
             /**YAO MING*/
             gc.setFill(Color.BLACK);
@@ -38,6 +40,8 @@ public class Graphics {
             for (int i = 0; i < 5; i++) {
                 gc.fillRect(world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
             }
+            gc.setFill(Color.BLACK);
+            gc.fillOval(world.blackHole.getPositionX(),world.blackHole.getPositionY(),world.blackHole.getWidth(),world.blackHole.getHeight());
         }
 
 
