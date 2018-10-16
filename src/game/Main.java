@@ -54,9 +54,4 @@ public class Main extends Application {
 
     }
 
-    @Override
-    public void stop() throws Exception{
-        timer.stop();
-        super.stop();
-    }
 }
