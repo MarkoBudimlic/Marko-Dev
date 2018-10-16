@@ -1,12 +1,20 @@
 package world;
 
+import java.awt.*;
+
 public class Player implements Object {
 
     int positionX = 710;
     int positionY = 780;
     int width = 50;
     int height = 50;
+    Rectangle boundsPlayer;
 
+    /**FINDS THE BOUNDS FOR COLLISION DETECTION*/
+    public Rectangle findBoundsPlayer() {
+        this.boundsPlayer = new Rectangle(positionX,positionY,width,height);
+        return boundsPlayer;
+    }
 
     public int getPositionX() {
         return positionX;

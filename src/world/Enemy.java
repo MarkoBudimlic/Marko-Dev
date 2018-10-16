@@ -1,6 +1,7 @@
 package world;
 
 
+import java.awt.*;
 
 public class Enemy implements Object {
 
@@ -10,12 +11,19 @@ public class Enemy implements Object {
     int positionY;
     int width;
     int height;
+    Rectangle boundsEnemy;
 
     public Enemy(int positionX, int positionY, int width, int height) {
         this.positionX = positionX;
         this.positionY = positionY;
         this.width = width;
         this.height = height;
+    }
+
+    /**FINDS THE BOUNDS FOR COLLISION DETECTION*/
+    public Rectangle findBoundsEnemy() {
+        this.boundsEnemy = new Rectangle(positionX,positionY,width,height);
+        return boundsEnemy;
     }
 
     public void setSpeed(int speed) {

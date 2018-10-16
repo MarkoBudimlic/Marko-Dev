@@ -6,6 +6,7 @@ import java.util.LinkedList;
 public class World {
 
     int counter = 0;
+    boolean status = true;
 
     public Player player = new Player();
 
@@ -27,11 +28,19 @@ public class World {
     /**TIME UPDATE*/
     public void update(long deltaMillis){
         counter += deltaMillis;
-        int newSpeed = (int)(counter/10000)+1;
+        int newSpeed = (counter/20000)+3;
         enemy1.setSpeed(newSpeed);
         for(Enemy enemy : enemies){
             enemy.move();
+            if(player.findBoundsPlayer().intersects(enemy.findBoundsEnemy())){
+                status = false;
+            }
         }
+
+    }
+
+    public boolean isStatus() {
+        return status;
     }
 
     public int getCounter() {
@@ -39,5 +48,8 @@ public class World {
     }
     public void resetCounter(){
         counter = 0;
+    }
+    public void gameOver(){
+
     }
 }
