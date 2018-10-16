@@ -4,9 +4,11 @@ public class World {
 
     int counter = 0;
 
+    public Player player = new Player();
 
 
-
+    public World() {
+    }
 
     /**TIME UPDATE*/
     public void update(long deltaMillis){

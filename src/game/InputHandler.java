@@ -14,9 +14,11 @@ public class InputHandler {
     public void onKeyPressed(KeyEvent event){
         if(event.getCode() == KeyCode.RIGHT){
             /**MOVE RIGHT*/
+            world.player.changeX(10);
         }
         else if(event.getCode() == KeyCode.LEFT){
             /**MOVE LEFT*/
+            world.player.changeX(-10);
         }
     }
 

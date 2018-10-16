@@ -22,7 +22,7 @@ public class Graphics {
         gc.fillRect(0,0,Main.screenX,Main.screenY);
 
         gc.setFill(Color.SANDYBROWN);
-        gc.fillRect(710,780,40,40);
+        gc.fillRect(world.player.getPositionX(),780,40,40);
 
     }
 }
