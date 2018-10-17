@@ -8,6 +8,8 @@ public class World {
     int counter = 0;
     boolean status = true;
 
+    public Star[] stars = createStars(100);
+
     public Player player = new Player();
 
     public Maelstrom maelstrom = new Maelstrom(700,100,300,300);
@@ -61,5 +63,24 @@ public class World {
     }
     public void gameOver(){
 
+    }
+
+    public Star[] createStars(int number){
+
+        Star[] stars1 = new Star[100];
+        int x = 5;
+        int y = 5;
+        Star star;
+        for (int i = 0; i < number; i++){
+
+            star = new Star(x,y);
+            stars1[i] = star;
+            x += 100;
+            for(int j = 0; j < 10; j++){
+                y += 100;
+            }
+
+        }
+        return stars1;
     }
 }

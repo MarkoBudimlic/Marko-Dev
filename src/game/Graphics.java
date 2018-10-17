@@ -6,6 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.RadialGradient;
 import javafx.scene.paint.Stop;
+import world.Star;
 import world.World;
 
 public class Graphics {
@@ -24,6 +25,11 @@ public class Graphics {
         /**DRAWS THE MODEL ON THE SCENE*/
         gc.setFill(Color.BLACK);
         gc.fillRect(0,0,Main.screenX,Main.screenY);
+
+        gc.setFill(Color.WHITE);
+        for(Star star : world.stars){
+            gc.fillOval(star.getPositionX(),star.getPositionY(),Star.width,Star.height);
+        }
 
 
 
