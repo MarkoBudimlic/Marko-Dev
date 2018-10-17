@@ -17,6 +17,7 @@ public class World {
     public Enemy enemy3 = new Enemy(500,-2000,200,500);
     public Enemy enemy4 = new Enemy(1100,-200,150,100);
     public Enemy enemy5 = new Enemy(1400,1200,900,30);
+    public Enemy enemy6 = new Enemy(200,-550,200,180);
     public List<Enemy> enemies = new LinkedList<>();
 
     public World() {
@@ -25,6 +26,7 @@ public class World {
         enemies.add(enemy3);
         enemies.add(enemy4);
         enemies.add(enemy5);
+        enemies.add(enemy6);
     }
 
     /**TIME UPDATE*/
@@ -35,7 +37,7 @@ public class World {
         maelstrom.setSpeed(newSpeed);
         for(Enemy enemy : enemies){
             enemy.move();
-            if(player.findBoundsPlayer().intersects(enemy.findBoundsEnemy())){
+            if(enemy.findBoundsEnemy().intersects(player.findBoundsPlayer())){
                 status = false;
             }
         }

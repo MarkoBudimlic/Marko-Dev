@@ -2,6 +2,7 @@ package world;
 
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 
 public class Enemy implements Object {
 
@@ -11,7 +12,7 @@ public class Enemy implements Object {
     int positionY;
     int width;
     int height;
-    Rectangle boundsEnemy;
+    Ellipse2D.Double boundsEnemy;
 
     public Enemy(int positionX, int positionY, int width, int height) {
         this.positionX = positionX;
@@ -21,8 +22,8 @@ public class Enemy implements Object {
     }
 
     /**FINDS THE BOUNDS FOR COLLISION DETECTION*/
-    public Rectangle findBoundsEnemy() {
-        this.boundsEnemy = new Rectangle(positionX,positionY,width,height);
+    public Ellipse2D.Double findBoundsEnemy() {
+        this.boundsEnemy = new Ellipse2D.Double(positionX,positionY,width,height);
         return boundsEnemy;
     }
 
