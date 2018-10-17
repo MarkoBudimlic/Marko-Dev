@@ -22,7 +22,7 @@ public class Graphics {
 
     public void draw(){
         /**DRAWS THE MODEL ON THE SCENE*/
-        gc.setFill(Color.AQUA);
+        gc.setFill(Color.DARKSLATEBLUE);
         gc.fillRect(0,0,Main.screenX,Main.screenY);
 
 
@@ -34,9 +34,7 @@ public class Graphics {
             gc.drawImage(new Image("yao.jpg"),0, 0);
         }
         else if(world.isStatus() == true) {
-            gc.setFill(Color.RED);
-            gc.fillRect(world.player.getPositionX(), world.player.getPositionY(), world.player.getWidth(), world.player.getHeight());
-
+            gc.drawImage(new Image("pirateship2.JPG"),world.player.getPositionX(),world.player.getPositionY());
             gc.setFill(Color.SANDYBROWN);
             for (int i = 0; i < 5; i++) {
                 gc.fillRect(world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());

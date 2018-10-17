@@ -5,9 +5,9 @@ import java.awt.*;
 public class Player implements Object {
 
     int positionX = 710;
-    int positionY = 780;
-    int width = 50;
-    int height = 50;
+    int positionY = 500;
+    int width = 100;
+    int height = 195;
     Rectangle boundsPlayer;
 
     /**FINDS THE BOUNDS FOR COLLISION DETECTION*/
