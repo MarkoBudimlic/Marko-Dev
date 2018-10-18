@@ -5,7 +5,7 @@ import java.awt.*;
 public class Player implements Object {
 
     int positionX = 710;
-    int positionY = 580;
+    int positionY = 650;
     int width = 100;
     int height = 195;
     Rectangle boundsPlayer;

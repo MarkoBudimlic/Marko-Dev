@@ -6,7 +6,7 @@ import java.awt.geom.Ellipse2D;
 public class Enemy implements Object {
 
 
-    private int speed = 6;
+    private int speed = 4;
     int positionX;
     int positionY;
     final int startingY = getPositionY() - 2000;

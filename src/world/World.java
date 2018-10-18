@@ -41,7 +41,12 @@ public class World {
     public void update(long deltaMillis){
         counter += deltaMillis;
         int newSpeed = enemy1.getSpeed();
-        enemy1.setSpeed(newSpeed);
+        if(getCounter()%20000 == 0){
+            newSpeed += 2;
+        }
+        for(Enemy enemy : enemies){
+            enemy.setSpeed(newSpeed);
+        }
         maelstrom.setSpeed(newSpeed);
         for(Star star : stars){
             star.move();
