@@ -6,7 +6,7 @@ import java.awt.geom.Ellipse2D;
 public class Enemy implements Object {
 
 
-    private int speed = 3;
+    private int speed = 6;
     int positionX;
     int positionY;
     final int startingY = getPositionY() - 2000;
@@ -49,8 +49,9 @@ public class Enemy implements Object {
     /**MOVES THE ENEMY OBJECTS*/
     public void move(){
         changeY(speed);
-        if(positionY > 2000){
-            this.positionY = startingY;
+        if(positionY > 1000){
+            this.positionY = -3500;
+            this.positionX = (int)(Math.random()*1200+100);
         }
     }
 

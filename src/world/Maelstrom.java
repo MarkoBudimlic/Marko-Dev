@@ -48,8 +48,8 @@ public class Maelstrom implements Object {
     /**MOVES THE ENEMY OBJECTS*/
     public void move(){
         changeY(speed);
-        if(positionY > 2000){
-            this.positionY = getStartingY();
+        if(positionY > 1000){
+            this.positionY = -3500;
         }
     }
 

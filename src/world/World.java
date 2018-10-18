@@ -12,15 +12,17 @@ public class World {
 
     public Player player = new Player();
 
-    public Maelstrom maelstrom = new Maelstrom(700,-1000,300,300);
-    public Anomaly anomaly = new Anomaly(-150,-1000,500,500);
+    public Maelstrom maelstrom = new Maelstrom(700,-1300,300,300);
 
-    public Enemy enemy1 = new Enemy(100,-500,300,260);
-    public Enemy enemy2 = new Enemy(300,-1500,300,260);
-    public Enemy enemy3 = new Enemy(500,-1500,300,260);
-    public Enemy enemy4 = new Enemy(1100,-1000,400,380);
-    public Enemy enemy5 = new Enemy(1200,-1500,300,260);
-    public Enemy enemy6 = new Enemy(200,-10,300,260);
+    public Enemy enemy1 = new Enemy(100,-3200,300,260);
+    public Enemy enemy2 = new Enemy(300,-2000,300,260);
+    public Enemy enemy3 = new Enemy(700,-2400,300,260);
+    public Enemy enemy4 = new Enemy(1100,-900,400,380);
+    public Enemy enemy5 = new Enemy(1200,-2900,300,260);
+    public Enemy enemy6 = new Enemy(200,-10,100,100);
+    public Enemy enemy7 = new Enemy(80,-300,100,100);
+    public Enemy enemy8 = new Enemy(80,-1700,100,100);
+    public Enemy enemy9 = new Enemy(80,-1400,100,100);
     public List<Enemy> enemies = new LinkedList<>();
 
     public World() {
@@ -30,6 +32,9 @@ public class World {
         enemies.add(enemy4);
         enemies.add(enemy5);
         enemies.add(enemy6);
+        enemies.add(enemy7);
+        enemies.add(enemy8);
+        enemies.add(enemy9);
     }
 
     /**TIME UPDATE*/
@@ -37,7 +42,6 @@ public class World {
         counter += deltaMillis;
         int newSpeed = enemy1.getSpeed();
         enemy1.setSpeed(newSpeed);
-        anomaly.setSpeed(newSpeed);
         maelstrom.setSpeed(newSpeed);
         for(Star star : stars){
             star.move();
@@ -52,7 +56,7 @@ public class World {
         if(maelstrom.findBoundsMaelstrom().intersects(player.findBoundsPlayer())){
             player.changeDirection();
         }
-        anomaly.move();
+
 
     }
 
