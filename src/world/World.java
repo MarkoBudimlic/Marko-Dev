@@ -12,14 +12,14 @@ public class World {
 
     public Player player = new Player();
 
-    public Maelstrom maelstrom = new Maelstrom(700,100,300,300);
+    public Maelstrom maelstrom = new Maelstrom(700,-1000,300,300);
     public Anomaly anomaly = new Anomaly(-150,-1000,500,500);
 
     public Enemy enemy1 = new Enemy(100,-500,300,260);
-    public Enemy enemy2 = new Enemy(300,1500,300,260);
-    public Enemy enemy3 = new Enemy(500,-2000,300,260);
+    public Enemy enemy2 = new Enemy(300,-1500,300,260);
+    public Enemy enemy3 = new Enemy(500,-1500,300,260);
     public Enemy enemy4 = new Enemy(1100,-1000,400,380);
-    public Enemy enemy5 = new Enemy(1400,1200,300,260);
+    public Enemy enemy5 = new Enemy(1200,-1500,300,260);
     public Enemy enemy6 = new Enemy(200,-10,300,260);
     public List<Enemy> enemies = new LinkedList<>();
 

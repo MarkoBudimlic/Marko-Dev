@@ -8,6 +8,7 @@ public class Maelstrom implements Object {
     private int speed;
     int positionX;
     int positionY;
+    final int startingY = getPositionY() - 2000;
     int width;
     int height;
     Ellipse2D.Double boundsMaelstrom;
@@ -29,6 +30,10 @@ public class Maelstrom implements Object {
         this.speed = speed;
     }
 
+    public int getStartingY() {
+        return startingY;
+    }
+
     public int getSpeed() {
         return speed;
     }
@@ -44,7 +49,7 @@ public class Maelstrom implements Object {
     public void move(){
         changeY(speed);
         if(positionY > 2000){
-            this.positionY = -2000;
+            this.positionY = getStartingY();
         }
     }
 
