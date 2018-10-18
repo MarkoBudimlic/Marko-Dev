@@ -40,7 +40,9 @@ public class Graphics {
             gc.drawImage(new Image("yao.jpg"),0, 0);
         }
         else if(world.isStatus() == true) {
-            gc.drawImage(new Image("starship1.jpg"),world.player.getPositionX(),world.player.getPositionY());
+
+                gc.drawImage(new Image("starship1.jpg"), world.player.getPositionX(), world.player.getPositionY());
+
 
             for (int i = 0; i < 6; i++) {
                 if(i < 3){
@@ -58,6 +60,12 @@ public class Graphics {
                     new Stop(0.8, Color.BLACK),
                     new Stop(1, Color.AQUA)));
             gc.fillOval(world.maelstrom.getPositionX(),world.maelstrom.getPositionY(),world.maelstrom.getWidth(),world.maelstrom.getHeight());
+
+            gc.setFill(new RadialGradient(0, 0.1, 0.55, 0.45, 0.06, true,
+                    CycleMethod.REFLECT,
+                    new Stop(0.8, Color.BLACK),
+                    new Stop(1, Color.ORANGERED)));
+            gc.fillOval(world.anomaly.getPositionX(), world.anomaly.getPositionY(), world.anomaly.getWidth(), world.anomaly.getHeight());
 
         }
 

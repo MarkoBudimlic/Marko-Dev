@@ -5,7 +5,7 @@ import java.awt.geom.Ellipse2D;
 
 public class Maelstrom implements Object {
 
-    public static int speed = 100;
+    private int speed;
     int positionX;
     int positionY;
     int width;
@@ -27,6 +27,10 @@ public class Maelstrom implements Object {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 
     public int getWidth() {

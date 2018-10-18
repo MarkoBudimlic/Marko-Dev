@@ -1,20 +1,16 @@
 package world;
 
-
-import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
-public class Enemy implements Object {
-
-
-    private int speed = 3;
+public class Anomaly implements Object {
+    private int speed;
     int positionX;
     int positionY;
     int width;
     int height;
-    Ellipse2D.Double boundsEnemy;
+    Ellipse2D.Double boundsAnomaly;
 
-    public Enemy(int positionX, int positionY, int width, int height) {
+    public Anomaly(int positionX, int positionY, int width, int height) {
         this.positionX = positionX;
         this.positionY = positionY;
         this.width = width;
@@ -22,17 +18,13 @@ public class Enemy implements Object {
     }
 
     /**FINDS THE BOUNDS FOR COLLISION DETECTION*/
-    public Ellipse2D.Double findBoundsEnemy() {
-        this.boundsEnemy = new Ellipse2D.Double(positionX,positionY,width,height);
-        return boundsEnemy;
+    public Ellipse2D.Double findBoundsAnomaly() {
+        this.boundsAnomaly = new Ellipse2D.Double(positionX,positionY,width,height);
+        return boundsAnomaly;
     }
 
     public void setSpeed(int speed) {
         this.speed = speed;
-    }
-
-    public int getSpeed() {
-        return speed;
     }
 
     public int getWidth() {
@@ -45,7 +37,7 @@ public class Enemy implements Object {
     /**MOVES THE ENEMY OBJECTS*/
     public void move(){
         changeY(speed);
-        if(positionY > 2000){
+        if(positionY > 1000){
             this.positionY = -2000;
         }
     }
@@ -57,6 +49,9 @@ public class Enemy implements Object {
     public int getPositionY() {
         return positionY;
     }
+
+
+
 
     @Override
     public int changeX(int change) {
@@ -70,3 +65,4 @@ public class Enemy implements Object {
         return positionY;
     }
 }
+

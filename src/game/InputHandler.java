@@ -36,6 +36,9 @@ public class InputHandler {
                 }
             }
         }
+        else if(event.getCode() == KeyCode.SPACE){
+            world.player.changeDirection();
+        }
     }
 
 }
