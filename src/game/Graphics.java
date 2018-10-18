@@ -14,12 +14,18 @@ public class Graphics {
 
     World world;
     GraphicsContext gc;
+    Image playerModel = new Image("starship1.jpg");
+    Image enemyModel1 = new Image("jupiter1.jpg");
+    Image enemyModel2 = new Image("star.jpg");
+    Image enemyModel3 = new Image("ultron1.jpg");
+    Image explosionModel = new Image("explosion.jpg");
 
 
     public Graphics(World world, GraphicsContext gc) {
         this.world = world;
         this.gc = gc;
     }
+
 
 
     public void draw(){
@@ -33,13 +39,14 @@ public class Graphics {
         }
         gc.setFill(Color.YELLOW);
         gc.setFont(Font.font(80));
-        gc.fillText(world.getCounterString(),10,50);
+        gc.fillText(world.getCounterString(),10,80);
 
 
 
         /**draws player object*/
         if(world.isStatus() == false){
             /**YAO MING*/
+            gc.drawImage(explosionModel, world.player.getPositionX()-100, world.player.getPositionY()-100, world.player.getWidth()+200,world.player.getHeight()+200);
             gc.setFill(Color.YELLOW);
             gc.drawImage(new Image("wtf.jpg"),350, 300);
             gc.setFont(Font.font(160));
@@ -47,16 +54,16 @@ public class Graphics {
         }
         else if(world.isStatus() == true) {
 
-                gc.drawImage(new Image("starship1.jpg"), world.player.getPositionX(), world.player.getPositionY());
+                gc.drawImage(playerModel, world.player.getPositionX(), world.player.getPositionY());
 
 
             for (int i = 0; i < 9; i++) {
                 if(i < 3){
-                    gc.drawImage(new Image("jupiter.jpg"),world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
+                    gc.drawImage(enemyModel1,world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
                 }else if(i == 3){
-                    gc.drawImage(new Image("star.jpg"),world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
+                    gc.drawImage(enemyModel2,world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
                 }else{
-                    gc.drawImage(new Image("ultron.jpg"),world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
+                    gc.drawImage(enemyModel3,world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
                 }
 
             }

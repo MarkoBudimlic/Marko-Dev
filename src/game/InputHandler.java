@@ -16,11 +16,11 @@ public class InputHandler {
             /**MOVE RIGHT*/
             if(world.player.getDirection()) {
                 if (world.player.getPositionX() < Main.screenX - 60) {
-                    world.player.changeX(30);
+                    world.player.changeX(20);
                 }
             }else{
                 if (world.player.getPositionX() > 10) {
-                    world.player.changeX(-30);
+                    world.player.changeX(-20);
                 }
             }
         }
@@ -28,11 +28,11 @@ public class InputHandler {
             /**MOVE LEFT*/
             if (world.player.getDirection()) {
                 if (world.player.getPositionX() > 10) {
-                    world.player.changeX(-30);
+                    world.player.changeX(-20);
                 }
             } else {
                 if (world.player.getPositionX() < Main.screenX - 60) {
-                    world.player.changeX(30);
+                    world.player.changeX(20);
                 }
             }
         }

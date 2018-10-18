@@ -9,7 +9,7 @@ public class Player implements Object {
     int width = 100;
     int height = 195;
     Rectangle boundsPlayer;
-    boolean direction = false;
+    boolean direction = true;
 
     /**FINDS THE BOUNDS FOR COLLISION DETECTION*/
     public Rectangle findBoundsPlayer() {

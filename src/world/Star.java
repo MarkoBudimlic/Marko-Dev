@@ -2,7 +2,7 @@ package world;
 
 public class Star implements Object{
 
-    public static final int speedStars = 25;
+    public static final int speedStars = 15;
     int positionX;
     int positionY;
     public static int width = 5;

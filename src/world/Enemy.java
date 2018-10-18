@@ -23,7 +23,7 @@ public class Enemy implements Object {
 
     /**FINDS THE BOUNDS FOR COLLISION DETECTION*/
     public Ellipse2D.Double findBoundsEnemy() {
-        this.boundsEnemy = new Ellipse2D.Double(positionX,positionY,width,height);
+        this.boundsEnemy = new Ellipse2D.Double(positionX-30,positionY-30,width-30,height-30);
         return boundsEnemy;
     }
 

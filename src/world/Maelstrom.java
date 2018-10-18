@@ -22,7 +22,7 @@ public class Maelstrom implements Object {
 
     /**FINDS THE BOUNDS FOR COLLISION DETECTION*/
     public Ellipse2D.Double findBoundsMaelstrom() {
-        this.boundsMaelstrom = new Ellipse2D.Double(positionX,positionY,width,height);
+        this.boundsMaelstrom = new Ellipse2D.Double(positionX-30,positionY-30,width-30,height-30);
         return boundsMaelstrom;
     }
 
