@@ -40,17 +40,18 @@ public class Graphics {
             gc.drawImage(new Image("yao.jpg"),0, 0);
         }
         else if(world.isStatus() == true) {
-            gc.drawImage(new Image("pirateship2.JPG"),world.player.getPositionX(),world.player.getPositionY());
+            gc.drawImage(new Image("starship1.jpg"),world.player.getPositionX(),world.player.getPositionY());
 
             for (int i = 0; i < 6; i++) {
-                if(i%2 == 0){
-                    gc.setFill(Color.RED);
-                }else if(i%3 == 0){
-                    gc.setFill(Color.LIMEGREEN);
+                if(i < 3){
+                    gc.drawImage(new Image("jupiter.jpg"),world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
+                }else if(i == 3){
+                    gc.drawImage(new Image("star.jpg"),world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
                 }else{
-                    gc.setFill(Color.PAPAYAWHIP);
+                    gc.drawImage(new Image("ultron.jpg"),world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
                 }
-                gc.fillOval(world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
+
+
             }
             gc.setFill(new RadialGradient(0, 0.1, 0.55, 0.45, 0.06, true,
                     CycleMethod.REFLECT,

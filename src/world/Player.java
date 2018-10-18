@@ -9,11 +9,16 @@ public class Player implements Object {
     int width = 100;
     int height = 195;
     Rectangle boundsPlayer;
+    boolean direction = false;
 
     /**FINDS THE BOUNDS FOR COLLISION DETECTION*/
     public Rectangle findBoundsPlayer() {
         this.boundsPlayer = new Rectangle(positionX,positionY,width,height);
         return boundsPlayer;
+    }
+
+    public boolean getDirection() {
+        return direction;
     }
 
     public int getPositionX() {
@@ -30,6 +35,10 @@ public class Player implements Object {
 
     public int getHeight() {
         return height;
+    }
+
+    public void changeDirection(){
+        this.direction = !direction;
     }
 
     @Override

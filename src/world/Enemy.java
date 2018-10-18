@@ -7,7 +7,7 @@ import java.awt.geom.Ellipse2D;
 public class Enemy implements Object {
 
 
-    public static int speed = 100;
+    public static int speed = 3;
     int positionX;
     int positionY;
     int width;

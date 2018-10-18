@@ -14,14 +14,26 @@ public class InputHandler {
     public void onKeyPressed(KeyEvent event){
         if(event.getCode() == KeyCode.RIGHT){
             /**MOVE RIGHT*/
-            if(world.player.getPositionX() < Main.screenX-60){
-                world.player.changeX(30);
+            if(world.player.getDirection()) {
+                if (world.player.getPositionX() < Main.screenX - 60) {
+                    world.player.changeX(30);
+                }
+            }else{
+                if (world.player.getPositionX() > 10) {
+                    world.player.changeX(-30);
+                }
             }
         }
         else if(event.getCode() == KeyCode.LEFT) {
             /**MOVE LEFT*/
-            if (world.player.getPositionX() > 10) {
-                world.player.changeX(-30);
+            if (world.player.getDirection()) {
+                if (world.player.getPositionX() > 10) {
+                    world.player.changeX(-30);
+                }
+            } else {
+                if (world.player.getPositionX() < Main.screenX - 60) {
+                    world.player.changeX(30);
+                }
             }
         }
     }

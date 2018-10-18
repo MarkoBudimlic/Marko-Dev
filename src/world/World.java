@@ -8,18 +8,18 @@ public class World {
     int counter = 0;
     boolean status = true;
 
-    public Star[] stars = createStars(100);
+    public List<Star> stars = createStars(100);
 
     public Player player = new Player();
 
     public Maelstrom maelstrom = new Maelstrom(700,100,300,300);
 
-    public Enemy enemy1 = new Enemy(100,-500,500,150);
-    public Enemy enemy2 = new Enemy(300,1500,1000,100);
-    public Enemy enemy3 = new Enemy(500,-2000,200,500);
-    public Enemy enemy4 = new Enemy(1100,-200,150,100);
-    public Enemy enemy5 = new Enemy(1400,1200,900,30);
-    public Enemy enemy6 = new Enemy(200,-550,200,180);
+    public Enemy enemy1 = new Enemy(100,-500,300,260);
+    public Enemy enemy2 = new Enemy(300,1500,300,260);
+    public Enemy enemy3 = new Enemy(500,-2000,300,260);
+    public Enemy enemy4 = new Enemy(1100,-1000,400,380);
+    public Enemy enemy5 = new Enemy(1400,1200,300,260);
+    public Enemy enemy6 = new Enemy(200,-10,300,260);
     public List<Enemy> enemies = new LinkedList<>();
 
     public World() {
@@ -34,9 +34,12 @@ public class World {
     /**TIME UPDATE*/
     public void update(long deltaMillis){
         counter += deltaMillis;
-        int newSpeed = 3 +(counter/20000);
+        int newSpeed = enemy1.speed +(getCounter()/50000);
         enemy1.setSpeed(newSpeed);
         maelstrom.setSpeed(newSpeed);
+        for(Star star : stars){
+            star.move();
+        }
         for(Enemy enemy : enemies){
             enemy.move();
             if(enemy.findBoundsEnemy().intersects(player.findBoundsPlayer())){
@@ -45,7 +48,7 @@ public class World {
         }
         maelstrom.move();
         if(maelstrom.findBoundsMaelstrom().intersects(player.findBoundsPlayer())){
-            status = false;
+            player.changeDirection();
         }
 
 
@@ -65,22 +68,12 @@ public class World {
 
     }
 
-    public Star[] createStars(int number){
+    public List<Star> createStars(int number){
 
-        Star[] stars1 = new Star[100];
-        int x = 5;
-        int y = 5;
-        Star star;
-        for (int i = 0; i < number; i++){
-
-            star = new Star(x,y);
-            stars1[i] = star;
-            x += 100;
-            for(int j = 0; j < 10; j++){
-                y += 100;
-            }
-
+        List<Star> randomList = new LinkedList<>();
+        for(int i = 0; i < number; i ++){
+            randomList.add(new Star((int)(Math.random()*1500+1),(int)(Math.random()*900+1)));
         }
-        return stars1;
+        return randomList;
     }
 }
