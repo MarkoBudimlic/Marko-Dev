@@ -6,6 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.RadialGradient;
 import javafx.scene.paint.Stop;
+import javafx.scene.text.Font;
 import world.Star;
 import world.World;
 
@@ -30,14 +31,19 @@ public class Graphics {
         for(Star star : world.stars){
             gc.fillOval(star.getPositionX(),star.getPositionY(),Star.width,Star.height);
         }
+        gc.setFill(Color.YELLOW);
+        gc.setFont(Font.font(80));
+        gc.fillText(world.getCounterString(),10,50);
 
 
 
         /**draws player object*/
         if(world.isStatus() == false){
             /**YAO MING*/
-            gc.setFill(Color.RED);
-            gc.drawImage(new Image("yao.jpg"),0, 0);
+            gc.setFill(Color.YELLOW);
+            gc.drawImage(new Image("wtf.jpg"),350, 300);
+            gc.setFont(Font.font(160));
+            gc.fillText("GAME OVER", 350,200);
         }
         else if(world.isStatus() == true) {
 

@@ -67,6 +67,16 @@ public class World {
     public int getCounter() {
         return counter;
     }
+    public String getCounterString(){
+        String countString;
+        if(status){
+            countString = Integer.toString(getCounter());
+        }
+        else{
+            countString = "GAME OVER";
+        }
+        return countString;
+    }
     public void resetCounter(){
         counter = 0;
     }
