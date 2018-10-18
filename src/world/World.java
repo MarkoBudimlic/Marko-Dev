@@ -13,7 +13,7 @@ public class World {
     public Player player = new Player();
 
     public Maelstrom maelstrom = new Maelstrom(700,100,300,300);
-    public Anomaly anomaly = new Anomaly(300,-800,200,200);
+    public Anomaly anomaly = new Anomaly(-150,-1000,500,500);
 
     public Enemy enemy1 = new Enemy(100,-500,300,260);
     public Enemy enemy2 = new Enemy(300,1500,300,260);
@@ -35,7 +35,7 @@ public class World {
     /**TIME UPDATE*/
     public void update(long deltaMillis){
         counter += deltaMillis;
-        int newSpeed = enemy1.getSpeed() +(getCounter()/50000);
+        int newSpeed = enemy1.getSpeed();
         enemy1.setSpeed(newSpeed);
         anomaly.setSpeed(newSpeed);
         maelstrom.setSpeed(newSpeed);

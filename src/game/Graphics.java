@@ -53,7 +53,6 @@ public class Graphics {
                     gc.drawImage(new Image("ultron.jpg"),world.enemies.get(i).getPositionX(), world.enemies.get(i).getPositionY(), world.enemies.get(i).getWidth(), world.enemies.get(i).getHeight());
                 }
 
-
             }
             gc.setFill(new RadialGradient(0, 0.1, 0.55, 0.45, 0.06, true,
                     CycleMethod.REFLECT,
@@ -61,11 +60,7 @@ public class Graphics {
                     new Stop(1, Color.AQUA)));
             gc.fillOval(world.maelstrom.getPositionX(),world.maelstrom.getPositionY(),world.maelstrom.getWidth(),world.maelstrom.getHeight());
 
-            gc.setFill(new RadialGradient(0, 0.1, 0.55, 0.45, 0.06, true,
-                    CycleMethod.REFLECT,
-                    new Stop(0.8, Color.BLACK),
-                    new Stop(1, Color.ORANGERED)));
-            gc.fillOval(world.anomaly.getPositionX(), world.anomaly.getPositionY(), world.anomaly.getWidth(), world.anomaly.getHeight());
+            gc.drawImage(new Image("anomaly.jpg"),world.anomaly.getPositionX(), world.anomaly.getPositionY(), world.anomaly.getWidth(), world.anomaly.getHeight());
 
         }
 
