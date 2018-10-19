@@ -41,8 +41,8 @@ public class World {
     public void update(long deltaMillis){
         counter += deltaMillis;
         int newSpeed = enemy1.getSpeed();
-        if(getCounter()%20000 == 0){
-            newSpeed += 2;
+        if(getCounter()%5000 <= 10){
+            newSpeed += 1;
         }
         for(Enemy enemy : enemies){
             enemy.setSpeed(newSpeed);
