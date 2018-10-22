@@ -44,10 +44,12 @@ public class World {
         if(getCounter()%5000 <= 10){
             newSpeed += 1;
         }
+
         for(Enemy enemy : enemies){
             enemy.setSpeed(newSpeed);
         }
         maelstrom.setSpeed(newSpeed);
+
         for(Star star : stars){
             star.move();
         }

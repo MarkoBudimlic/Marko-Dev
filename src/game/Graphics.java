@@ -16,7 +16,7 @@ public class Graphics {
     GraphicsContext gc;
     Image playerModel = new Image("starship1.jpg");
     Image enemyModel1 = new Image("jupiter1.jpg");
-    Image enemyModel2 = new Image("star.jpg");
+    Image enemyModel2 = new Image("sunultra.png");
     Image enemyModel3 = new Image("ultron1.jpg");
     Image explosionModel = new Image("explosion.jpg");
 
