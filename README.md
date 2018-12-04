@@ -1,3 +1,3 @@
 # Marko-Dev
-this is a fun space game parody
+this is a fun Java space game parody using Canvas/JavaFX 
 i used free models from opengameart.org
